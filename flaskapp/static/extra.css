@@ -1,0 +1,22 @@
+.video-container {
+    position: relative;
+    width: 100%; /* Плеер занимает всю ширину контейнера */
+    max-width: 1280px; /* Максимальная ширина для ПК */
+    max-height: 450px; /* Максимальная высота плеера для ПК */
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        height: auto; /* Высота автоматически подстраивается на мобильных устройствах */
+        max-height: 300px; /* Ограниченная высота плеера для мобильных устройств */
+    }
+}

@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <!-- slider starts  -->
+    <section id="home" class="iq-main-slider p-0">
+        <div id="home-slider" class="slider m-0 p-0">
+            <div class="slide slick-bg s-bg-1">
+                <div class="container-fluid position-relative h-100">
+                    <div class="slider-inner h-100">
+                        <div class="row align-items-center h--100">
+                            <div class="col-xl-6 col-lg-12 col-md-12">
+                                <h1 class="slider-text big-title title text-uppercase" data-animation-in="fadeInLeft"
+                                    data-delay-in="0.6">
+                                    Проклятие Тебнева: Расширенная версия
+                                </h1>
+                                <div class="d-flex flex-wrap align-items-center fadeInLeft animated"
+                                     data-animation-in="fadeInLeft"
+                                     style="opacity: 1">
+                                    <div class="slider-ratting d-flex align-items-center mr-4 mt-2 mt-md-3">
+                                        <ul
+                                                class="ratting-start p-0 m-0 list-inline text-primary d-flex align-items-center justify-content-left">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star-half-o"></i></li>
+                                        </ul>
+                                        <span class="text-white ml-2">8.6 (КиноПоиск)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mt-2 mt-md-3">
+                                        <span class="badge badge-secondary p-2">16+</span>
+                                        <span class="ml-3">55min</span>
+                                    </div>
+                                </div>
+                                <p data-animation-in="fadeInUp">
+                                    Столкновение обычного парня с альтернативной зловещей версией самого себя, которая
+                                    стремится уничтожить все живое.
+                                </p>
+                                <div class="trending-list" data-animation-in="fadeInUp" data-delay-in="1.2">
+                                    <div class="text-primary title starring">
+                                        В ролях :
+                                        <span class="text-body">Данил Тебнев, Эмиль Гафаров, Михаил Пруденко</span>
+                                    </div>
+                                    <div class="text-primary title genres">
+                                        Жанры : <span class="text-body">Хоррор, Триллер, Боевик, Комедия</span>
+                                    </div>
+                                    <div class="text-primary title tag">
+                                        Страна :
+                                        <span class="text-body">Россия, Израиль</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center r-mb-23 mt-4" data-animation-in="fadeInUp"
+                                     data-delay-in="1.2">
+                                    <a href="/watch/directors-cut" class="btn btn-hover iq-button"><i
+                                            class="fa fa-play mr-3"></i>Смотреть</a>
+                                    <a href="/watch/trailer" class="btn btn-link">Трейлер</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- slider ends -->
+    <div class="main-content">
+        <section id="iq-trending " class="">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 overflow-hidden">
+                        <div class="trending-contens">
+                            <div class="tranding-block position-relative"
+                                 style="background-image: url(/images/trending/01.jpg);">
+                                <div class="trending-content">
+                                    <div id="trending-data1" class="overview-tab tab-pane fade active show">
+                                        <div class="trending-info align-items-center w-100 animated fadeInUp">
+                                            <h1 class="trending-text big-title text-uppercase">Проклятие Тебнева</h1>
+                                            <p class="trending-dec">
+                                                Оригинальная версия легендарной истории.
+                                            </p>
+                                            <div class="p-btns">
+                                                <div class="d-flex align-items-center p-0">
+                                                    <a href="/watch/s1ep1" class="btn btn-hover mr-2" tabindex="0">
+                                                        <i class="fa fa-play mr-2"></i>
+                                                        Смотреть с 1 серии
+                                                    </a>
+                                                    <a href="/watch/trailer" class="btn btn-link" tabindex="0">
+                                                        Трейлер
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="trending-list mt-4" data-animation-in="fadeInUp"
+                                                 data-delay-in="1.2">
+                                                <div class="text-primary title starring">
+                                                    В ролях :
+                                                    <span class="text-body">Данил Тебнев, Эмиль Гафаров, Михаил Пруденко</span>
+                                                </div>
+                                                <div class="text-primary title genres">
+                                                    Жанры : <span
+                                                        class="text-body">Хоррор, Триллер, Боевик, Комедия</span>
+                                                </div>
+                                                <div class="text-primary title tag">
+                                                    Страна :
+                                                    <span class="text-body">Россия, Израиль</span>
+                                                </div>
+                                            </div>
+                                            <div class="episodes-contens mt-5">
+                                                <div class="owl-carousel owl-theme episodes-slider1 list-inline p-0 m-0">
+                                                    {% for film_id, film_data in films.items() %}
+                                                        <div class="e-item">
+                                                            <div class="block-image position-relative">
+                                                                <a href="#">
+                                                                    <img src="/images/thumbnails/{{ film_id }}.jpg"
+                                                                         class="img-fluid" alt="">
+                                                                </a>
+                                                                <div class="episode-play-info">
+                                                                    <div class="episode-play">
+                                                                        <a href="/watch/{{ film_id }}"
+                                                                           tabindex="0">
+                                                                            <i class="fa fa-play"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="episodes-description text-body">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <a href="#"><b>Эпизод {{ film_data['index'] }}</b></a>
+                                                                    <span class="text-primary">{{ film_data['duration'] }}</span>
+                                                                </div>
+                                                                <p class="mb-0">{{ film_data['title'] }}</p>
+                                                            </div>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

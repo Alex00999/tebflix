@@ -1,0 +1,33 @@
+version: '3'
+services:
+  # Flask application service
+  web:
+    build: ./flaskapp  # Папка с Flask приложением и Dockerfile
+    container_name: flask_app
+    restart: always
+    expose:
+      - "5000"
+    environment:
+      - FLASK_ENV=production
+    volumes:
+      - ./flaskapp:/app  # Монтируем папку приложения
+    networks:
+      - webnet
+
+  # Nginx service
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"  # Только HTTP
+    volumes:
+      - ./nginx:/etc/nginx/conf.d  # Настройки Nginx
+    depends_on:
+      - web  # Nginx стартует после Flask
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
