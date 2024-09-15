@@ -246,17 +246,6 @@
             }
         });
 
-
-        jQuery('.trending-content').each(function(){
-            var highestBox = 0;
-            jQuery('.tab-pane', this).each(function(){
-                if(jQuery(this).height() > highestBox){
-                    highestBox = jQuery(this).height();
-                }
-            });
-            jQuery('.tab-pane', this).height(highestBox);
-        });
-
         if(jQuery('select').hasClass('season-select')){
             jQuery('select').select2({
                 theme : 'bootstrap4',
