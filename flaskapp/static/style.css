@@ -14,7 +14,7 @@ body{
 .container-fluid{
     padding: 0 100px;
 }
-header#main-header{
+header#main-header {
     position: fixed;
     left: 0;
     right: 0;
@@ -22,7 +22,9 @@ header#main-header{
     z-index: 99;
     background: rgba(20, 20, 20, 0.5) !important;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Добавь этот префикс для Safari */
 }
+
 header .navbar-light .navbar-brand img.logo{
     width: 160px;
 }
@@ -53,7 +55,7 @@ header .navbar ul li.menu-item a{
     position: relative;
     padding: 0 0 0 10px;
     line-height: 70px;
-    z-index: 9;
+    z-index: 999;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     text-transform: uppercase;
@@ -105,7 +107,7 @@ header .navbar ul li.menu-item a:hover{
     position: relative;
     padding: 0 0 0 10px;
     line-height: 70px;
-    z-index: 9;
+    z-index: 99;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     text-transform: capitalize;
@@ -152,7 +154,7 @@ header .navbar ul li.menu-item a:hover{
     padding: 0 0 0 10px;
     line-height: 70px;
     position: relative;
-    z-index: 9;
+    z-index: 99;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     text-transform: capitalize;
@@ -194,7 +196,7 @@ header .navbar ul li .sub-menu li:hover>a::after{
     right: 0;
     transform: translate3d(-100%,0,0);
     transition: all 0.5s ease-in-out;
-    z-index: -1;
+    z-index: 99;
     opacity: 0;
 }
 
@@ -354,7 +356,7 @@ header .navbar ul li:last-child{
     padding: 0;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-out 0s;
-    z-index: 1;
+    z-index: 99;
 }
 .navbar-light .navbar-toggler-icon{
     background: url(images/menu.png) no-repeat scroll center center;
@@ -703,7 +705,7 @@ header#main-header.menu-sticky{
         top: 0;
         width: 100%;
         padding: 0;
-        z-index: 9;
+        z-index: 99;
     }
     header .navbar ul li .sub-menu li .sub-menu li.menu-item a{
         background: transparent;
@@ -1742,14 +1744,14 @@ background: rgba(0, 0, 0, 0.8);
     color: #fff;
     right: auto;
     left: 11px;
-    z-index: 9;
+    z-index: 5;
     top: 90px;
 }
 #trending-slider-nav .slick-next, .trending-contens .slick-next{
     left: auto;
     color: #fff;
     right: 11px;
-    z-index: 9;
+    z-index: 5;
     top: 90px;
 }
 #trending-slider-nav .slick-prev::before, .trending-contens .slick-next::before, .trending-contens .slick-prev::before, .trending-contens .slick-next::before{
@@ -1779,7 +1781,7 @@ background: rgba(0, 0, 0, 0.8);
 #trending-slider-nav .movie-slick{
     border: 12px solid transparent;
     transition: all 0.4s ease;
-    z-index: -1;
+    z-index: 5;
 }
 #trending-slider-nav .slick-current.slick-active .movie-slick{
     transition: all 0.4s ease;
@@ -1911,6 +1913,7 @@ background: rgba(0, 0, 0, 0.8);
 }
 .trending-info .trending-text{
     font-size: 60px;
+    z-index: 3;
     line-height: 100px;
     margin: 15px 0;
 }
@@ -1975,7 +1978,7 @@ background: rgba(0, 0, 0, 0.8);
 }
 .trending-info{
     position: relative;
-    z-index: 99;
+    z-index: 5;
 }
 
 .trending-info .trending-dec{
