@@ -17,13 +17,13 @@ print(tebnev_curse_original)
 
 @app.route('/')
 def index():
-    return render_template('index.html', films=tebnev_curse_original)
+    return render_template('index.html', films=tebnev_curse_original, title=' - Главная')
 
 
 @app.route('/watch/<content>')
 def player(content):
     player_data = tebnev_curse_original | directors_cut
-    return render_template('player.html', film=player_data[content])
+    return render_template('player.html', film=player_data[content], title=f' - {player_data[content]["title"]}')
 
 
 @app.route('/media')
