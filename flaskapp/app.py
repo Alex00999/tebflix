@@ -23,7 +23,7 @@ def index():
 @app.route('/watch/<content>')
 def player(content):
     player_data = tebnev_curse_original | directors_cut
-    return render_template('player.html', film=player_data[content], title=f' - {player_data[content]["title"]}')
+    return render_template('player.html', film=content, title=f' - {player_data[content]["title"]}')
 
 
 @app.route('/media')
@@ -47,6 +47,22 @@ def serve_image(filename):
         try:
             return send_from_directory('static', 'logo.png')
         except NotFound:
+            abort(404)
+
+
+@app.route('/videos/<path:filename>')
+def serve_video(filename):
+    base_dir = 'videos'  # Папка для видео находится в корневом каталоге
+    file_path = os.path.join(base_dir, filename)
+
+    if os.path.exists(file_path):
+        return send_from_directory(base_dir, filename)
+    else:
+        # Путь к логотипу (может быть изменен, если логотип хранится в другой папке)
+        logo_path = os.path.join('static', 'logo.png')
+        if os.path.exists(logo_path):
+            return send_from_directory('static', 'logo.png')
+        else:
             abort(404)
 
 

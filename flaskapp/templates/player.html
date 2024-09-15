@@ -8,9 +8,11 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-12 text-center">
                             <div class="video-container">
-                                <iframe src="https://vk.com/video_ext.php?oid=-183035397&id={{ film['video_id'] }}&hd=3&autoplay=1"
-                                        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-                                        frameborder="0" allowfullscreen></iframe>
+                                <div class="video-container">
+                                    <video id="player" class="plyr__video-embed" controls>
+                                        <source src="/videos/{{ film }}.mp4" type="video/mp4"/>
+                                    </video>
+                                </div>
                             </div>
                         </div>
                     </div>

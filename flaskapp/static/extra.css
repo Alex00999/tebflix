@@ -1,44 +1,21 @@
 .video-container {
     position: relative;
     width: 100%; /* Плеер занимает всю ширину контейнера */
-    max-width: 1280px; /* Максимальная ширина для ПК */
-    max-height: 450px; /* Максимальная высота плеера для ПК */
-    overflow: hidden;
+    max-width: 1280px; /* Ограничим максимальную ширину для больших экранов */
+    height: auto; /* Высота будет рассчитываться пропорционально содержимому */
+    margin: 0 auto; /* Центрируем контейнер */
+    padding: 0; /* Убираем лишние отступы */
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.video-container video {
+    width: 100%; /* Плеер будет растягиваться на всю ширину контейнера */
+    height: auto; /* Автоматическая высота, чтобы сохранять пропорции */
 }
 
 @media (max-width: 768px) {
     .video-container {
-        height: auto; /* Высота автоматически подстраивается на мобильных устройствах */
-        max-height: 300px; /* Ограниченная высота плеера для мобильных устройств */
+        max-width: 100%; /* На мобильных устройствах плеер занимает всю ширину */
+        height: auto;
     }
 }
 
-.video-container {
-    position: relative;
-    width: 85%;
-    padding-top: 47.65%;
-    margin: auto;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-@media (max-width: 767px) {
-    .video-container {
-        width: 100%;
-        padding-top: 56.25%; /* Соотношение сторон 16:9 для мобильных устройств */
-    }
-}

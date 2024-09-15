@@ -1,14 +1,14 @@
 {
-    "directors-cut": {
-        "index": 1,
-        "title": "Проклятье Тебнева: Расширенная Версия",
-        "duration": "55:47",
-        "video_id": "456239044"
-    },
-        "trailer": {
-        "index": 1,
-        "title": "Трейлер",
-        "duration": "1:02",
-        "video_id": "456239029"
-    }
+  "directors-cut": {
+    "index": 1,
+    "title": "Проклятье Тебнева: Расширенная Версия",
+    "duration": "55:47",
+    "file_name": "directors-cut"
+  },
+  "trailer": {
+    "index": 1,
+    "title": "Трейлер",
+    "duration": "1:02",
+    "file_name": "trailer"
+  }
 }

@@ -17,10 +17,10 @@
     <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/select2.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/select2-bootstrap4.min.css') }}" rel="stylesheet">
-
     <link href="{{ url_for('static', filename='css/slick-animation.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='extra.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='plyr/plyr.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -225,7 +225,8 @@
                                 </li>
                                 <li class="nav-item nav-icon">
                                     <a href="#" class="iq-user-dropdown search-toggle d-flex align-items-center p-0">
-                                        <img src="/images/user/user.jpg" class="img-fluid user-m rounded-circle" alt=""/>
+                                        <img src="/images/user/user.jpg" class="img-fluid user-m rounded-circle"
+                                             alt=""/>
                                     </a>
                                     <div class="iq-sub-dropdown iq-user-dropdown">
                                         <div class="iq-card shadow-none m-0">
@@ -362,8 +363,9 @@
 <script src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/slick-animation.min.js') }}"></script>
-
 <script src="{{ url_for('static', filename='main.js') }}"></script>
+<script src="{{ url_for('static', filename='plyr/plyr.js') }}"></script>
+<script>const player = new Plyr('#player');</script>
 </body>
 
 </html>
